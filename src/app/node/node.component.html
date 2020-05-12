@@ -1,0 +1,17 @@
+<div class="tree-node" > 
+    <button
+        (click)="toggleChildrenComponents()"
+        *ngIf="node.children.length > 0"
+        class="button-expanded"> 
+        <mat-icon>{{ !isShown ? 'arrow_right': 'arrow_drop_down' }}</mat-icon> 
+    </button>
+    <input type="checkbox" 
+           [checked]="node.selected" 
+           (change)="updateCheckboxNode()" /> 
+    {{ node.value }}
+    <div *ngFor="let children of node.children">
+        <app-node 
+            [node]="children" 
+            *ngIf="isShown"></app-node>
+    </div>
+</div>

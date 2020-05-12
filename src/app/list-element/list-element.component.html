@@ -1,0 +1,10 @@
+<div > 
+    <div *ngIf="element.selected"> 
+        {{ element.value }}
+    </div>
+    <ul>
+        <li *ngFor="let children of element.children"> 
+            <app-list-element [element]="children"> </app-list-element>
+        </li>
+    </ul>
+</div>

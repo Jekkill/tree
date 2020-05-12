@@ -1,0 +1,5 @@
+<button (click)="saveCurrentTreeStateToLocalStorage()"> Сохранить дерево </button>
+<div *ngFor="let currentNode of tree" class="node">
+    <app-node 
+        [node]="currentNode"></app-node>
+</div>
